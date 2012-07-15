@@ -7,14 +7,12 @@ from email import parser
 pop_conn = poplib.POP3_SSL('pop.gmail.com')
 
 # prompt for gmail account id and password
-pop_conn.user(username)
-pop_conn.pass_(passwd)
+pop_conn.user('tni711')
+pop_conn.pass_('tni3298tni')
 
 # Get messages from server
 print 'connecting '
-# messages = [pop_conn.retr(i) for i in range(1, len(pop_conn.list()[1]) + 1)]
-# get first 10 email
-messages = [pop_conn.retr(i) for i in 10]
+messages = [pop_conn.retr(i) for i in range(1, len(pop_conn.list()[1]) + 1)]
 
 # Concat message pieces
 print 'joining message ..'
