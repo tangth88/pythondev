@@ -1,4 +1,6 @@
 # Sendmail1 - SMTP test program
+# Date : July 15, 2012
+# Objective : To develop the baseline sendmail utlity in Python
 #
 import smtplib
 
