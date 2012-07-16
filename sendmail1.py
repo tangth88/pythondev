@@ -3,13 +3,14 @@
 # Objective : To develop the baseline sendmail utlity in Python
 #
 import smtplib
+import getpass
 
- 
 # 
-# please replace username and password with proper value before testing
-to = 'toname@hotmail.com'
-gmail_user = 'fromname@gmail.com'
-gmail_pwd = 'thepassword'
+# please input username and password with proper value before testing
+# Use GMail SMTP server for outgoing mail
+to = raw_input('To Address:')
+gmail_user = raw_input('From Address:')
+gmail_pwd = raw_input('GMail Password:')
 
 #
 smtpserver = smtplib.SMTP("smtp.gmail.com",587)
