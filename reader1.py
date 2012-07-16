@@ -3,12 +3,16 @@
 
 import poplib
 from email import parser
+import getpass
 
 pop_conn = poplib.POP3_SSL('pop.gmail.com')
 
 # prompt for gmail account id and password
-pop_conn.user('tni711')
-pop_conn.pass_('tni3298tni')
+username=raw_input('GMail Account :')
+passwd=getpass.getpass('Password :')
+
+pop_conn.user(username)
+pop_conn.pass_(passwd)
 
 # Get messages from server
 print 'connecting '
@@ -22,6 +26,7 @@ messages = ["\n".join(mssg[1]) for mssg in messages]
 print 'parsing email...'
 messages = [parser.Parser().parsestr(mssg) for mssg in messages]
 print 'parsing done'
+print messages
 
 #
 pop_conn.quit()
